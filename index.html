@@ -1,72 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <title>case-guardian-nexus</title>
-    <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
-
-    <meta property="og:title" content="case-guardian-nexus" />
-    <meta property="og:description" content="Lovable Generated Project" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@lovable_dev" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-  </head>
-
-  <body>
-    <div id="root"></div>
-    <!-- Initialize admin user -->
-    <script>
-      // Initialize admin user in localStorage
-      function createAdminUser() {
-        const adminUser = {
-          id: "admin-" + Date.now(),
-          email: "AhmedHusseinElsayed@outlook.com",
-          password: "Cas@135$",
-          name: "Ahmed Hussein Elsayed",  // Make sure name is properly set
-          role: "admin",
-          permissions: {
-            viewCases: true,
-            manageCases: true,
-            viewReports: true,
-            generateReports: true,
-            viewUsers: true,
-            manageUsers: true,
-            viewMessages: true,
-            manageSettings: true
-          }
-        };
-    
-        // Initialize users in localStorage if not exists
-        const existingUsers = localStorage.getItem('users');
-        if (!existingUsers) {
-          localStorage.setItem('users', JSON.stringify([adminUser]));
-          console.log('Admin user initialized successfully');
-        } else {
-          // Check if admin user already exists
-          const users = JSON.parse(existingUsers);
-          const adminExists = users.some(user => user.email === adminUser.email);
-          if (!adminExists) {
-            users.push(adminUser);
-            localStorage.setItem('users', JSON.stringify(users));
-            console.log('Admin user added successfully');
-          } else {
-            // Update existing admin user to ensure it has all required fields
-            const updatedUsers = users.map(user => 
-              user.email === adminUser.email ? { ...user, ...adminUser } : user
-            );
-            localStorage.setItem('users', JSON.stringify(updatedUsers));
-            console.log('Admin user updated successfully');
-          }
-        }
-      }
-    
-      // Execute immediately
-      createAdminUser();
-    </script>
-      </body>
-</html>
+    <!-- ... rest of your head content ... -->
+</head>
